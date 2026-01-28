@@ -1,6 +1,6 @@
 ### Cey-Core Studio Web Sitesi
 
-Modern web teknolojileri ile geliştirilmiş, tamamen responsive (duyarlı) bir oyun stüdyosu tanıtım sitesi.
+Bu proje, modern web teknolojileri ve responsive tasarım prensipleri kullanılarak geliştirilmiş konsept bir oyun stüdyosu tanıtım sitesidir.
 
 
 Sitenin canlı halini buradan inceleyebilirsiniz:
