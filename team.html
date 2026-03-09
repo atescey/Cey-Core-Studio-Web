@@ -9,10 +9,6 @@
 </head>
 
 <body>
-    <button id="theme-toggle" class="theme-switcher">
-    <span id="theme-icon">🌙</span>
-</button>
-
     <nav class="navbar">
         <div class="logo">Cey-Core Studio</div>
         <ul class="nav-links">
@@ -97,29 +93,5 @@
         <p>© 2026 Cey-Core Studio</p>
     </footer>
 </body>
-<script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
-
-    //  Sayfa yüklendiğinde hafızayı kontrol et
-    const savedTheme = localStorage.getItem('theme') || 'dark'; // Varsayılan dark
-    htmlElement.setAttribute('data-theme', savedTheme);
-    updateIcon(savedTheme);
-
-    //  Butona tıklandığında temayı değiştir
-    toggleBtn.addEventListener('click', () => {
-        let currentTheme = htmlElement.getAttribute('data-theme');
-        let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme); // Hafızaya kaydet
-        updateIcon(newTheme);
-    });
-
-    // İkonu temaya göre güncelleme fonksiyonu
-    function updateIcon(theme) {
-        toggleBtn.innerHTML = theme === 'dark' ? '🌙' : '☀️';
-    }
-</script>
 
 </html>
