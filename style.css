@@ -248,7 +248,7 @@ body {
         flex-direction: column;
         align-items: center;
         padding: 0;
-        gap: 10px; /* Linkler arası biraz boşluk */
+        gap: 10px; /* Linkler arası birazcık boşluk */
     }
 }
 
@@ -262,3 +262,69 @@ footer {
     justify-content: center;
     margin-top: 60px;
 }
+
+/* EKİP ALANI DÜZENİ (FLEXBOX) */
+.team-grid {
+    display: flex;             /* Kartları yan yana dizer */
+    justify-content: center;   /* Kartları yatayda ortalamak için */
+    gap: 25px;                 /* Kartlar arası boşluk için */
+    flex-wrap: wrap;           /* Mobilde alt alta geçmesini sağlar */
+    padding: 50px 20px;
+}
+
+/* PERSONEL KARTI ANA YAPISI */
+.team-card {
+    position: relative;        /* İçindeki elementleri konumlandırmak için */
+    width: 280px;
+    height: 380px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 15px;
+    overflow: hidden;          /* Taşan içeriği (alttaki bilgileri) gizler */
+    transition: transform 0.4s ease-in-out; /* Kartın genel geçiş hızı için */
+    cursor: pointer;
+}
+
+/* Karta gelince hafif büyüme efekti */
+.team-card:hover {
+    transform: scale(1.03);    /* Mouse gelince %3 büyütür  */
+    border-color: #7b2cbf;     /* Kenarlığı mor yapar */
+}
+
+/* PERSONEL RESMİ */
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out; /* Kayma efekti hızı */
+}
+
+/* SLIDE UP: Mouse gelince resmi yukarı kaydırır  */
+.team-card:hover .member-img {
+    transform: translateY(-30%); /* Resmi %30 yukarı iter */
+}
+
+/* BİLGİ PANELİ (ALTTAN ÇIKAN KISIM) */
+.info-content {
+    position: absolute;
+    bottom: -100%;            
+    left: 0;
+    width: 100%;
+    height: 45%;               
+    background: linear-gradient(transparent, #7b2cbf); /* mor geçiş */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: bottom 0.5s ease-in-out; /* Yukarı çıkış hızı  */
+    z-index: 2;                /* Resmin üstünde görünmesini sağlar */
+}
+
+/* Mouse gelince panel yukarı çıkar */
+.team-card:hover .info-content {
+    bottom: 0;                 /* Paneli kartın içine çeker */
+}
+
+/* Yazı Stilleri */
+.info-content h3 { margin: 0; color: white; font-size: 1.2rem; }
+.info-content p { margin: 5px 0; color: #ddd; font-size: 0.9rem; }
